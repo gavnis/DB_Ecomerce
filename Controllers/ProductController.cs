@@ -30,7 +30,15 @@ namespace DiaD.Controllers
         [HttpGet("{id}")]
         public ActionResult<Producto> Get(int id)
         {
-            return Context.Productos.Find(id);
+            var Producto = Context.Productos.Find(id);
+            if (Producto != null)
+            {
+                return Producto; 
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
         // POST api/product

@@ -11,7 +11,11 @@ namespace DiaD.Models
 
         public DbSet<Producto> Productos { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
-        public DbSet<Cliente> Clientes { get; set;}
+        public DbSet<Cliente> Clientes { get; set; }
+        /**
+        Example for add table in db:
+        public DbSet<> { get; set; }
+        */
     }
 
 

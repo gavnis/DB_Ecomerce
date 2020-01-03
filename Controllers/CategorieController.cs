@@ -30,7 +30,15 @@ namespace DiaD.Controllers
         [HttpGet("{id}")]
         public ActionResult<Categoria> Get(int id)
         {
-            return Context.Categorias.Find(id);
+            var Categoria = Context.Categorias.Find(id);
+            if (Categoria != null)
+            {
+                return Categoria;
+            }
+            else
+            {
+                return NotFound();
+            }
         }
 
 

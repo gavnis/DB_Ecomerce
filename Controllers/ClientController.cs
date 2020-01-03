@@ -30,7 +30,15 @@ namespace DiaD.Controllers
         [HttpGet("{username}")]
         public ActionResult<Cliente> Get(string username)
         {
-            return Context.Clientes.FirstOrDefault(b => b.Username == username);
+            var Username = Context.Clientes.FirstOrDefault(b => b.Username == username);
+            if (Username != null)
+            {
+                return Username;
+            } 
+            else
+            {
+                return NotFound();
+            }
         }
 
         // POST api/product
